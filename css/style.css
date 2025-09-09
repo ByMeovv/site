@@ -6,16 +6,16 @@
 }
 
 :root {
-    --primary: #8A2BE2;
-    --secondary: #2A2A2A;
-    --accent: #6A1CB0;
-    --text: #FFFFFF;
-    --text-secondary: #CCCCCC;
+    --bg-primary: #1c1c1c;
+    --text-primary: #fffafa;
+    --accent: #b5b8b1;
+    --card-bg: #2a2a2a;
+    --text-secondary: #b5b8b1;
 }
 
 body {
-    background-color: #000;
-    color: var(--text);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     overflow-x: hidden;
     line-height: 1.6;
 }
@@ -25,6 +25,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
+    background-color: var(--bg-primary);
 }
 
 .container {
@@ -36,11 +37,11 @@ body {
 /* Header Styles */
 header {
     padding: 20px 0;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(28, 28, 28, 0.95);
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid var(--primary);
+    border-bottom: 1px solid var(--accent);
     backdrop-filter: blur(10px);
 }
 
@@ -53,13 +54,13 @@ header {
 .logo {
     font-size: 28px;
     font-weight: 700;
-    color: var(--text);
+    color: var(--text-primary);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .logo span {
-    color: var(--primary);
+    color: var(--accent);
 }
 
 .logo:hover {
@@ -77,7 +78,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: var(--text);
+    color: var(--text-primary);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
@@ -85,7 +86,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: var(--primary);
+    color: var(--accent);
 }
 
 nav ul li a:after {
@@ -93,7 +94,7 @@ nav ul li a:after {
     position: absolute;
     width: 0;
     height: 2px;
-    background: var(--primary);
+    background: var(--accent);
     left: 0;
     bottom: 0;
     transition: width 0.3s ease;
@@ -107,7 +108,7 @@ nav ul li a:hover:after {
 .hero {
     padding: 150px 0 100px;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+    background: linear-gradient(rgba(28, 28, 28, 0.9), rgba(28, 28, 28, 0.9));
     opacity: 0;
     transform: translateY(20px);
     animation: fadeIn 1s ease forwards 0.5s;
@@ -134,7 +135,7 @@ nav ul li a:hover:after {
     position: absolute;
     width: 100%;
     height: 3px;
-    background: var(--primary);
+    background: var(--accent);
     left: 0;
     bottom: -10px;
     transform: scaleX(0);
@@ -162,9 +163,10 @@ nav ul li a:hover:after {
 .btn {
     display: inline-block;
     padding: 12px 30px;
-    background-color: var(--primary);
-    color: var(--text);
+    background-color: transparent;
+    color: var(--text-primary);
     text-decoration: none;
+    border: 2px solid var(--accent);
     border-radius: 30px;
     font-weight: 600;
     transition: all 0.3s;
@@ -182,14 +184,15 @@ nav ul li a:hover:after {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(181, 184, 177, 0.2), transparent);
     transition: all 0.5s;
 }
 
 .btn:hover {
     background-color: var(--accent);
+    color: var(--bg-primary);
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3);
+    box-shadow: 0 10px 20px rgba(181, 184, 177, 0.3);
 }
 
 .btn:hover:before {
@@ -216,7 +219,7 @@ nav ul li a:hover:after {
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background-color: var(--primary);
+    background-color: var(--accent);
 }
 
 .carousel-wrapper {
@@ -247,10 +250,10 @@ nav ul li a:hover:after {
     flex: 0 0 auto;
     width: 300px;
     margin: 0 15px;
-    background-color: var(--secondary);
+    background-color: var(--card-bg);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.2);
+    box-shadow: 0 5px 15px rgba(181, 184, 177, 0.2);
     transition: all 0.3s ease;
     opacity: 0;
     transform: translateY(20px);
@@ -260,16 +263,16 @@ nav ul li a:hover:after {
 
 .carousel-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(138, 43, 226, 0.3);
+    box-shadow: 0 15px 30px rgba(181, 184, 177, 0.3);
 }
 
 .product-image {
     height: 200px;
-    background-color: #2a2a2a;
+    background-color: var(--card-bg);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary);
+    color: var(--accent);
     font-size: 40px;
     position: relative;
     overflow: hidden;
@@ -280,7 +283,7 @@ nav ul li a:hover:after {
     position: absolute;
     width: 150%;
     height: 150%;
-    background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1), transparent);
+    background: linear-gradient(45deg, transparent, rgba(181, 184, 177, 0.1), transparent);
     transform: translateX(-100%);
     transition: transform 0.6s;
 }
@@ -296,10 +299,11 @@ nav ul li a:hover:after {
 .product-info h3 {
     font-size: 18px;
     margin-bottom: 10px;
+    color: var(--text-primary);
 }
 
 .product-info p {
-    color: var(--primary);
+    color: var(--accent);
     font-weight: 600;
     margin-bottom: 15px;
 }
@@ -315,7 +319,7 @@ nav ul li a:hover:after {
 .carousel-nav-btn {
     width: 12px;
     height: 12px;
-    background: var(--secondary);
+    background: var(--card-bg);
     border-radius: 50%;
     margin: 0 5px;
     cursor: pointer;
@@ -323,21 +327,21 @@ nav ul li a:hover:after {
 }
 
 .carousel-nav-btn.active {
-    background: var(--primary);
+    background: var(--accent);
     transform: scale(1.2);
 }
 
 /* Reviews Section */
 .reviews {
-    background-color: #0a0a0a;
+    background-color: #141414;
     padding: 60px 0;
 }
 
 .review-item {
-    background-color: var(--secondary);
+    background-color: var(--card-bg);
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.2);
+    box-shadow: 0 5px 15px rgba(181, 184, 177, 0.2);
     transition: all 0.3s ease;
     opacity: 0;
     transform: translateY(20px);
@@ -347,7 +351,7 @@ nav ul li a:hover:after {
 
 .review-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(138, 43, 226, 0.3);
+    box-shadow: 0 10px 25px rgba(181, 184, 177, 0.3);
 }
 
 .review-header {
@@ -360,7 +364,8 @@ nav ul li a:hover:after {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: var(--primary);
+    background-color: var(--accent);
+    color: var(--bg-primary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -394,7 +399,7 @@ nav ul li a:hover:after {
 }
 
 .review-rating {
-    color: #FFD700;
+    color: var(--accent);
     margin-left: auto;
 }
 
@@ -407,9 +412,9 @@ nav ul li a:hover:after {
 
 /* Footer */
 footer {
-    background-color: #0a0a0a;
+    background-color: #141414;
     padding: 60px 0 30px;
-    border-top: 1px solid var(--secondary);
+    border-top: 1px solid var(--card-bg);
 }
 
 .footer-content {
@@ -443,7 +448,7 @@ footer {
     left: 0;
     width: 40px;
     height: 2px;
-    background-color: var(--primary);
+    background-color: var(--accent);
 }
 
 .footer-column ul {
@@ -462,7 +467,7 @@ footer {
 }
 
 .footer-column ul li a:hover {
-    color: var(--primary);
+    color: var(--text-primary);
     transform: translateX(5px);
 }
 
@@ -477,9 +482,9 @@ footer {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background-color: var(--secondary);
+    background-color: var(--card-bg);
     border-radius: 50%;
-    color: var(--text);
+    color: var(--text-primary);
     text-decoration: none;
     transition: all 0.3s;
     position: relative;
@@ -500,16 +505,17 @@ footer {
 }
 
 .social-links a:hover {
-    background-color: var(--primary);
+    background-color: var(--accent);
+    color: var(--bg-primary);
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
+    box-shadow: 0 5px 15px rgba(181, 184, 177, 0.3);
 }
 
 .copyright {
     text-align: center;
     padding-top: 30px;
-    border-top: 1px solid var(--secondary);
-    color: #666;
+    border-top: 1px solid var(--card-bg);
+    color: var(--text-secondary);
     opacity: 0;
     animation: fadeIn 1s ease forwards 1.2s;
 }
@@ -546,4 +552,35 @@ footer {
     .carousel-item {
         width: 250px;
     }
+}
+
+/* Demo Content for Preview */
+.demo-content {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.color-swatch {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.swatch-primary {
+    background-color: #1c1c1c;
+    border: 1px solid #b5b8b1;
+}
+
+.swatch-text {
+    background-color: #fffafa;
+    border: 1px solid #b5b8b1;
+}
+
+.swatch-accent {
+    background-color: #b5b8b1;
 }
